@@ -302,7 +302,7 @@ def create_ModelCheckpoint(checkpoint_path):
     """
     Print Variable names and default values used
     """
-    print(f'save_weights_only is set to: {SAVE_WEIGHTS_ONLY}')\n
-    print(f'monitor is set to: {MONITOR}')\n
-    print(f'save_best_only is set to: {SAVE_BEST_ONLY}')\n
+    print(f'save_weights_only is set to: {SAVE_WEIGHTS_ONLY}')
+    print(f'monitor is set to: {MONITOR}')
+    print(f'save_best_only is set to: {SAVE_BEST_ONLY}')
     print(f'save_frequency is set to: {SAVE_FREQUENCY}')
