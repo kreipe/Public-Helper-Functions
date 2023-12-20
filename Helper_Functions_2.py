@@ -286,3 +286,23 @@ def calculate_results(y_true, y_pred):
                   "recall": model_recall,
                   "f1": model_f1}
   return model_results
+
+# Create a ModelCheckpoint callback that save's the models weights only # quicker
+def create_ModelCheckpoint(checkpoint_path):
+    """
+    Collects input and defaults for supplying ModelCheckpoint callback
+    """
+    # Validate variables
+    CHECKPOINT_PATH = "type in file directory to store checkpoint name"
+    SAVE_WEIGHTS_ONLY = True
+    MONITOR = "val_accuracy"
+    SAVE_BEST_ONLY = True
+    SAVE_FREQUENCY = "epoch"
+
+    """
+    Print Variable names and default values used
+    """
+    print(f'save_weights_only is set to: {SAVE_WEIGHTS_ONLY}')\n
+    print(f'monitor is set to: {MONITOR}')\n
+    print(f'save_best_only is set to: {SAVE_BEST_ONLY}')\n
+    print(f'save_frequency is set to: {SAVE_FREQUENCY}')
