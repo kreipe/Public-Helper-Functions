@@ -321,9 +321,9 @@ from sklearn.metrics import confusion_matrix
 
 # Our function needs a different name to sklearn's plot_confusion_matrix
 def make_confusion_matrix_2(y_true, y_pred, classes=None, figsize=(10, 10), text_size=15, norm=False, savefig=False): 
-  """Makes a labelled confusion matrix comparing predictions and ground truth labels.
+  """ Makes a labeled confusion matrix comparing predictions and ground truth labels.
 
-  If classes is passed, confusion matrix will be labelled, if not, integer class values
+  If classes are passed, the confusion matrix will be labeled, if not, integer class values
   will be used.
 
   Args:
@@ -345,7 +345,7 @@ def make_confusion_matrix_2(y_true, y_pred, classes=None, figsize=(10, 10), text
                           figsize=(15, 15),
                           text_size=10)
   """  
-  # Create the confustion matrix
+  # Create the confusion matrix
   cm = confusion_matrix(y_true, y_pred)
   cm_norm = cm.astype("float") / cm.sum(axis=1)[:, np.newaxis] # normalize it
   n_classes = cm.shape[0] # find the number of classes we're dealing with
@@ -362,7 +362,7 @@ def make_confusion_matrix_2(y_true, y_pred, classes=None, figsize=(10, 10), text
     labels = np.arange(cm.shape[0])
   
   # Label the axes
-  ax.set(title="Confusion Matrix",
+  ax.set(title="Confusion Matrix - v2",
          xlabel="Predicted label",
          ylabel="True label",
          xticks=np.arange(n_classes), # create enough axis slots for each class
