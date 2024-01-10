@@ -398,3 +398,9 @@ def make_confusion_matrix_2(y_true, y_pred, classes=None, figsize=(10, 10), text
   if savefig:
     fig.savefig("confusion_matrix.png")
 
+# Evaluate model results against Test data  (to be built)
+#need model name, test_data, Req
+# Req: from keras.models import load_model
+# 1 model_name = model.evaluate(test_data)
+# 2 load_results_model_name
+
