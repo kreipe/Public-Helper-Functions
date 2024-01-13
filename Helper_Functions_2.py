@@ -336,7 +336,7 @@ def make_confusion_matrix_2(y_true, y_pred, classes=None, figsize=(10, 10), text
     savefig: save confusion matrix to file (default=False).
   
   Returns:
-    A labelled confusion matrix plot comparing y_true and y_pred.
+    A labeled confusion matrix plot comparing y_true and y_pred.
 
   Example usage:
     make_confusion_matrix(y_true=test_labels, # ground truth test labels
@@ -397,6 +397,20 @@ def make_confusion_matrix_2(y_true, y_pred, classes=None, figsize=(10, 10), text
   # Save the figure to the current working directory
   if savefig:
     fig.savefig("confusion_matrix.png")
+
+def calculate_results(y_true, y_pred):
+    """
+    Calculates model accuracy, precision, recall and f1 score of a binary classification model.
+    """
+    # Cakcyate model accuracy
+    model_accuracy = accuracy_score(val_labels, baseline_preds) * 100
+    # calculates model precision, recall and f1-score using weighted average
+    model_precision, model_recall, model_f1, _ = precision_recall_fscore_support(y_true, y_pred, average='weighted')
+    model_results = {'accuracy': model_accuracy,
+                     'precision': model_precision,
+                     'recall': model_recall,
+                     'f1': model_f1}
+    return model_results   # returns as dictionary
 
 # UNDER DEVELOPMENT
 # Evaluate model results against Test data  (to be built)
