@@ -442,3 +442,42 @@ def evaluate_preds(y_true, y_pred):
            'rmse': rmse.numpy(),
            'mape': mape.numpy(),
            'mase': mase.numpy()}
+
+# Following are from routines built for Advanced Computer Vision
+
+def unpreprocess(img):
+    img[..., 0] += 103.939
+    img[..., 1] += 116.779
+    img[..., 2] += 123.68
+    img = img[..., ::-1]
+    return img
+
+def scale_img(x):
+    x = x - x.min()
+    x = x / x.max()
+    return x
+
+
+def VGG_AvgPool(shape):
+    # want to account for features across image
+    # so eliminate maxpool which throws away information
+    vgg = VGG16(input_shape=shape, weights='imagenet', include_top=False)
+
+    # new_model = Sequential()
+    # for layer in vgg.layers:
+    #    if layer.__class__ == MaxPooling2D:
+    #        # replace with average pooling
+    #        new_model.add(AveragePooling2D())
+    #    else:
+    #        new_model.add(layer)
+
+    i = vgg.input
+    x = i
+    for layer in vgg.layers:
+        if layer.__class__ == MaxPooling2D:
+            # replace it with average pooling
+            x = AveragePooling2D()(x)
+        else:
+            x = layer(x)
+
+    return Model(i, x)
