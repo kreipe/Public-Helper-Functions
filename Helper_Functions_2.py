@@ -486,14 +486,14 @@ def VGG_AvgPool(shape):
 
 
 
-# Generic functions below
+# Generic functions below - these need functionizing!
 # Enable gdrive - for storage of data and retention of weight by iteration results during model execution
 
 from google.colab import drive
 drive.mount('/content/drive', force_remount=True)
 
 # Check for GPU
-!nvidia-smi -L
+# !nvidia-smi -L    # need to uncomment 
 
 # Import latest version of helper functions file - update with correct version 
 !wget raw.githubusercontent.com/kreipe/Public-Helper-Functions/main/Helper_Functions_2.py
