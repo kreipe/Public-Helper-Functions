@@ -488,9 +488,8 @@ def VGG_AvgPool(shape):
 
 # Generic functions below - these need functionizing!
 # Enable gdrive - for storage of data and retention of weight by iteration results during model execution
-
-from google.colab import drive
-drive.mount('/content/drive', force_remount=True)
+# from google.colab import drive
+# drive.mount('/content/drive', force_remount=True)
 
 # Check for GPU
 # !nvidia-smi -L    # need to uncomment 
