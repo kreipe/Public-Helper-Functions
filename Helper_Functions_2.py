@@ -483,3 +483,22 @@ def VGG_AvgPool(shape):
             x = layer(x)
 
     return Model(i, x)
+
+
+
+# Generic functions below
+# Enable gdrive - for storage of data and retention of weight by iteration results during model execution
+
+from google.colab import drive
+drive.mount('/content/drive', force_remount=True)
+
+# Check for GPU
+!nvidia-smi -L
+
+# Import latest version of helper functions file - update with correct version 
+!wget raw.githubusercontent.com/kreipe/Public-Helper-Functions/main/Helper_Functions_2.py
+
+# example call:
+# from Helper_Functions_2 import create_tensorboard_callback, plot_loss_curves, unzip_data, walk_through_dir, compare_historys, calculate_results
+
+
