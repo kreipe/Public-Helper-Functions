@@ -496,7 +496,7 @@ drive.mount('/content/drive', force_remount=True)
 # !nvidia-smi -L    # need to uncomment 
 
 # Import latest version of helper functions file - update with correct version 
-!wget raw.githubusercontent.com/kreipe/Public-Helper-Functions/main/Helper_Functions_2.py
+#!wget raw.githubusercontent.com/kreipe/Public-Helper-Functions/main/Helper_Functions_2.py
 
 # example call:
 # from Helper_Functions_2 import create_tensorboard_callback, plot_loss_curves, unzip_data, walk_through_dir, compare_historys, calculate_results
