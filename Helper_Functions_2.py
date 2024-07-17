@@ -1,4 +1,6 @@
-### We create a bunch of helpful functions throughout the course.
+### Collection of various helper functions created for courses
+###     At some point of stability I'll categorize these and seperate for ease of
+###     finding appropriate functions - including summary info in top of doc
 ### Storing them here so they're easily accessible.
 
 import tensorflow as tf
